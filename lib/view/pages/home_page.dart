@@ -1,4 +1,5 @@
 import 'package:bytes_deliver/controller/services/api_service.dart';
+import 'package:bytes_deliver/view/widgets/products_grid_view_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -14,11 +15,9 @@ class HomePage extends StatelessWidget {
         future: ApiServices.getData(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return ListView.builder(
-              itemCount: snapshot.data!.length,
-              itemBuilder: (context, index) =>
-                  Text(snapshot.data![index].title),
-            );
+            return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: ProductGridViewidget(data: snapshot.data!));
           } else if (snapshot.data == null) {
             return const Center(
               child: Text('Null'),
