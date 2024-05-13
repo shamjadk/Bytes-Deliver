@@ -15,9 +15,10 @@ class ApiServices {
       if (response.statusCode == 200) {
         log(response.statusCode.toString());
         final producList = <ApiModel>[];
-        for (final result in response.data) {
+        for (final result in response.data['list']) {
           producList.add(ApiModel.fromJson(result));
         }
+        return producList;
       } else {
         log(response.statusCode.toString());
       }
