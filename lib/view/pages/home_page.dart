@@ -1,12 +1,13 @@
-import 'package:bytes_deliver/controller/services/api_service.dart';
+import 'package:bytes_deliver/controller/provider/api_provider.dart';
 import 'package:bytes_deliver/view/widgets/products_grid_view_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends ConsumerWidget {
   const HomePage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -18,7 +19,7 @@ class HomePage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: FutureBuilder(
-          future: ApiServices.getData(),
+          future: ref.watch(apiProvider.notifier).getdata(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return Padding(
