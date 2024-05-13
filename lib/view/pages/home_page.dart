@@ -15,6 +15,7 @@ class HomePage extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(
+              itemCount: snapshot.data!.length,
               itemBuilder: (context, index) =>
                   Text(snapshot.data![index].title),
             );
