@@ -1,4 +1,6 @@
+import 'package:bytes_deliver/controller/nav_controller.dart';
 import 'package:bytes_deliver/controller/provider/api_provider.dart';
+import 'package:bytes_deliver/view/pages/cart_page.dart';
 import 'package:bytes_deliver/view/widgets/products_grid_view_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -16,6 +18,11 @@ class HomePage extends ConsumerWidget {
         ),
         elevation: 0,
         scrolledUnderElevation: 0,
+        actions: [
+          IconButton(
+              onPressed: () => navPush(context, const Cartpage()),
+              icon: const Icon(Icons.shopping_cart))
+        ],
       ),
       body: SingleChildScrollView(
         child: FutureBuilder(

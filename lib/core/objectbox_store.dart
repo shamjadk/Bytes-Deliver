@@ -1,6 +1,5 @@
 import 'package:bytes_deliver/model/cart_entity_model/cart_entity_model.dart';
 import 'package:bytes_deliver/objectbox.g.dart';
-import 'package:objectbox/objectbox.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart';
 
