@@ -1,5 +1,5 @@
 import 'package:bytes_deliver/controller/nav_controller.dart';
-import 'package:bytes_deliver/model/api_model.dart';
+import 'package:bytes_deliver/model/api_model/api_model.dart';
 import 'package:bytes_deliver/view/pages/overview_page.dart';
 import 'package:flutter/material.dart';
 

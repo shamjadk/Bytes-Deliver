@@ -1,4 +1,4 @@
-import 'package:bytes_deliver/model/api_model.dart';
+import 'package:bytes_deliver/model/api_model/api_model.dart';
 import 'package:bytes_deliver/view/widgets/product_card_widget.dart';
 import 'package:flutter/material.dart';
 

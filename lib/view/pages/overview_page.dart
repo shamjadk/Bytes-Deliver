@@ -1,4 +1,4 @@
-import 'package:bytes_deliver/model/api_model.dart';
+import 'package:bytes_deliver/model/api_model/api_model.dart';
 import 'package:flutter/material.dart';
 
 class OverViewPage extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:bytes_deliver/core/api_constants.dart';
-import 'package:bytes_deliver/model/api_model.dart';
+import 'package:bytes_deliver/model/api_model/api_model.dart';
 import 'package:dio/dio.dart';
 
 class ApiServices {
