@@ -9,27 +9,37 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Bytes Deliver'),
+        title: const Text(
+          'Bytes Deliver',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        elevation: 0,
+        scrolledUnderElevation: 0,
       ),
-      body: FutureBuilder(
-        future: ApiServices.getData(),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: ProductGridViewidget(data: snapshot.data!));
-          } else if (snapshot.data == null) {
-            return const Center(
-              child: Text('Null'),
-            );
-          } else if (snapshot.hasError) {
-            return const Center(
-              child: Text('Error'),
-            );
-          } else {
-            return const LinearProgressIndicator();
-          }
-        },
+      body: SingleChildScrollView(
+        child: FutureBuilder(
+          future: ApiServices.getData(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Column(
+                    children: [
+                      ProductGridViewidget(data: snapshot.data!),
+                      const SizedBox(
+                        height: 16,
+                      ),
+                    ],
+                  ));
+            } else if (snapshot.hasError) {
+              return const Center(
+                child: Text('Error'),
+              );
+            } else {
+              return const LinearProgressIndicator();
+            }
+          },
+        ),
       ),
     );
   }
