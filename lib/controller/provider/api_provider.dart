@@ -20,7 +20,7 @@ class Api extends _$Api {
   }
 
   Future<List<ApiModel>?> getdata() async {
-    return ApiServices.getData();
+    return ApiServices.getData(1);
   }
 
   Future<void> addToCart(CartEntityModel model) async {

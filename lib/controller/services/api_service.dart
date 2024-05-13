@@ -5,12 +5,12 @@ import 'package:bytes_deliver/model/api_model/api_model.dart';
 import 'package:dio/dio.dart';
 
 class ApiServices {
-  static Future<List<ApiModel>?> getData() async {
+  static Future<List<ApiModel>?> getData(int page) async {
     final dio = Dio();
 
     try {
       dio.options.headers['appid'] = ApiConstants.appId;
-      FormData formData = FormData.fromMap({'page': 1});
+      FormData formData = FormData.fromMap({'page': page});
       final response = await dio.post(ApiConstants.apiUrl, data: formData);
       if (response.statusCode == 200) {
         log(response.statusCode.toString());
