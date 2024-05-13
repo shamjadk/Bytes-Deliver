@@ -21,7 +21,27 @@ class HomePage extends ConsumerWidget {
         actions: [
           IconButton(
               onPressed: () => navPush(context, const Cartpage()),
-              icon: const Icon(Icons.shopping_cart))
+              icon: Stack(
+                children: [
+                  const Icon(Icons.shopping_cart),
+                  ref.watch(apiProvider).isNotEmpty
+                      ? Positioned(
+                          right: 0,
+                          child: CircleAvatar(
+                            backgroundColor: Colors.red,
+                            foregroundColor: Colors.white,
+                            radius: 5,
+                            child: Center(
+                              child: Text(
+                                ref.watch(apiProvider).length.toString(),
+                                style: const TextStyle(fontSize: 6),
+                              ),
+                            ),
+                          ),
+                        )
+                      : const Text('')
+                ],
+              ))
         ],
       ),
       body: SingleChildScrollView(
