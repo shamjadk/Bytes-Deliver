@@ -14,7 +14,7 @@ class ProductGridViewidget extends StatelessWidget {
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             mainAxisSpacing: 8,
-            mainAxisExtent: 220,
+            mainAxisExtent: 240,
             crossAxisSpacing: 8),
         itemCount: data.length,
         itemBuilder: (context, index) => ProductcardWidget(model: data[index]));

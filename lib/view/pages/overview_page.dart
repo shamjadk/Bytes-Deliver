@@ -43,7 +43,7 @@ class OverViewPage extends ConsumerWidget {
                 Text(
                   '₹${model.price}',
                   style: const TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.green),
+                      fontWeight: FontWeight.w500, color: Colors.green),
                 )
               ],
             ),
